@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { IonButton, IonText } from '@ionic/react';
+import { IonButton, IonIcon, IonText } from '@ionic/react';
+import { star } from 'ionicons/icons';
 import "./Stopwatch.css";
 
 class Stopwatch extends Component {
@@ -99,6 +100,7 @@ class Stopwatch extends Component {
                 )}
                 </div>
                 <br />
+                <IonIcon icon={ star } />
                 <p>Pre-Set Time</p>
                 {this.state.preSetText}
                 <div className="Numpad">{timeBtns}</div>
