@@ -1,0 +1,13 @@
+{
+  "appId": "none.stopwatch.appi",
+  "appName": "stopwatch-app",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
