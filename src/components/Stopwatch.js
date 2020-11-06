@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { IonButton, IonText } from '@ionic/react';
 import "./Stopwatch.css";
 
 class Stopwatch extends Component {
@@ -68,30 +69,33 @@ class Stopwatch extends Component {
     const btnList = [1,2,3,4,5,6,7,8,9,0,"reset"];
 
     const timeBtns = btnList.map((snglBtn) =>
-      <button key={snglBtn.toString()} onClick={() => this.setPreSetTime(snglBtn)}>{snglBtn}</button>
+      <IonButton key={snglBtn.toString()} onClick={() => this.setPreSetTime(snglBtn)}>{snglBtn}</IonButton>
     );
 
     const { timerTime } = this.state;
     let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
-    let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
+    // let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
     return (
       <div className="Stopwatch">
           <div className="Stopwatch-display">
-                {hours} : {minutes} : {seconds} : {centiseconds}
+                {/* {hours} : {minutes} : {seconds} : {centiseconds} */}
+                <IonText className="Timer">
+                  {minutes} : {seconds} : {centiseconds}
+                </IonText>
                 <div>
                 {this.state.timerOn === false && this.state.timerTime === 0 && (
-                <button onClick={this.startTimer}>Start</button>
+                <IonButton onClick={this.startTimer}>Start</IonButton>
                 )}
                 {this.state.timerOn === true && (
-                  <button onClick={this.stopTimer}>Stop</button>
+                  <IonButton onClick={this.stopTimer}>Stop</IonButton>
                 )}
                 {this.state.timerOn === false && this.state.timerTime > 0 && (
-                  <button onClick={this.startTimer}>Resume</button>
+                  <IonButton onClick={this.startTimer}>Resume</IonButton>
                 )}
                 {this.state.timerOn === false && this.state.timerTime > 0 && (
-                  <button onClick={this.resetTimer}>Reset</button>
+                  <IonButton onClick={this.resetTimer}>Reset</IonButton>
                 )}
                 </div>
                 <br />
