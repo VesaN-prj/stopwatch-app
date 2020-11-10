@@ -3,9 +3,25 @@ ion-icon {
 }
 
 .Stopwatch {
+    position: relative;
+    width: 350px;
     text-align: center;
+    margin: auto;
+}
+
+.Stopwatch-display {
+    padding-top: 4em;
 }
 
 .Timer {
     font-size: 2em;
+}
+
+.Numpad {
+    --opacity: 100; /* IonButton visibility on Numpad */
+}
+
+/* .btn_1, .btn_2, .... , .btn_0, .btn_reset */
+.btn_1 {
+
 }

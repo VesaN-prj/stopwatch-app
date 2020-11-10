@@ -9,8 +9,7 @@ class Stopwatch extends Component {
           timerStart: 0,
           timerTime: 0,
           preSetTime: 0,
-          preSetTimer: 0,
-          preSetText: "00:00:00"
+          preSetTimer: 0
         };    
  
   startTimer = () => {
@@ -56,12 +55,6 @@ class Stopwatch extends Component {
         preSetTimer: parseInt(this.state.preSetTime.toString() + snglBtn.toString() + "0")
       })
     }
-    const { preSetTimer } = this.state;
-    let centiseconds = ("0" + (Math.floor(preSetTimer / 10) % 100)).slice(-2);
-    let seconds = ("0" + (Math.floor(preSetTimer / 1000) % 60)).slice(-2);
-    let minutes = ("0" + (Math.floor(preSetTimer / 60000) % 60)).slice(-2);
-    let timeSet = minutes + ":" + seconds + ":" + centiseconds;
-    this.setState({preSetText: timeSet});
     console.log ( this.state.preSetTimer )
   };
 
@@ -70,20 +63,20 @@ class Stopwatch extends Component {
     const btnList = [1,2,3,4,5,6,7,8,9,0,"reset"];
 
     const timeBtns = btnList.map((snglBtn) =>
-      <IonButton key={snglBtn.toString()} onClick={() => this.setPreSetTime(snglBtn)}>{snglBtn}</IonButton>
+      <IonButton className={"Numpad btn_"+ snglBtn.toString()} key={snglBtn.toString()} onClick={() => this.setPreSetTime(snglBtn)}>{snglBtn}</IonButton>
     );
 
     const { timerTime } = this.state;
     let centiseconds = ("0" + (Math.floor(timerTime / 10) % 100)).slice(-2);
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
-    let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
+    // let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
     // let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
     return (
       <div className="Stopwatch">
           <div className="Stopwatch-display">
                 {/* {hours} : {minutes} : {seconds} : {centiseconds} */}
                 <IonText className="Timer">
-                  {minutes} : {seconds} : {centiseconds}
+                  {seconds} : {centiseconds}
                 </IonText>
                 <div>
                 {this.state.timerOn === false && this.state.timerTime === 0 && (
@@ -100,11 +93,9 @@ class Stopwatch extends Component {
                 )}
                 </div>
                 <br />
-                <IonIcon icon={ star } />
-                <p>Pre-Set Time</p>
-                {this.state.preSetText}
-                <div className="Numpad">{timeBtns}</div>
+                <IonIcon icon={ star } /> {/* temp icon so IDE doesn't nag for not being used */}
           </div>
+          {timeBtns}
         </div>
     );
   }
