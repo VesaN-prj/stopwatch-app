@@ -1,5 +1,5 @@
 ion-icon {
-    color: white;
+    color: rgba(255, 255, 255, 0);
 }
 
 .Stopwatch {
@@ -18,7 +18,7 @@ ion-icon {
 }
 
 .Numpad {
-    --opacity: 100; /* IonButton visibility on Numpad */
+    --opacity: 1; /* IonButton visibility on Numpad */
 }
 
 /* .btn_1, .btn_2, .... , .btn_0, .btn_reset */
