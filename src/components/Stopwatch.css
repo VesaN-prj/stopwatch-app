@@ -23,5 +23,57 @@ ion-icon {
 
 /* .btn_1, .btn_2, .... , .btn_0, .btn_reset */
 .btn_1 {
-
-}
+    position: absolute;
+    top: 1em;
+    left: 1em;
+  }
+  .btn_2 {
+    position: absolute;
+    top: 1em;
+    left: 150px;
+  }
+  .btn_3 {
+    position: absolute;
+    top: 1em;
+    left: 300px;
+  }
+  .btn_4 {
+    position: absolute;
+    top: 6em;
+    left: 1em;
+  }
+  .btn_5 {
+    position: absolute;
+    top: 6em;
+    left: 300px;
+  }
+  .btn_6 {
+    position: absolute;
+    top: 12em;
+    left: 1em;
+  }
+  .btn_7 {
+    position: absolute;
+    top: 18em;
+    left: 150px;
+  }
+  .btn_8 {
+    position: absolute;
+    top: 12em;
+    left: 300px;
+  }
+  .btn_9 {
+    position: absolute;
+    top: 18em;
+    left: 1em;
+  }
+  .btn_0 {
+    position: absolute;
+    top: 18em;
+    left: 300px;
+  }
+  .btn_reset {
+    position: absolute;
+    top: 12em;
+    left: 132px;
+  } 
