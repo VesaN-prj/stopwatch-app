@@ -1,23 +1,27 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import React from 'react';
+import React, { useState } from 'react';
 import Stopwatch from '../components/Stopwatch.js';
 import './Home.css';
 
 const Home: React.FC = () => {
+  const [btnStatus, setBtnStatus ] = useState({btnToggle: 0});
+  function clickToggle(){
+    btnStatus.btnToggle !== 0 ? setBtnStatus({btnToggle: 0}) : setBtnStatus({btnToggle: 1});
+  }
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Stopwatch</IonTitle>
+          <IonTitle onClick={clickToggle}>Stopwatch</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Stopwatch</IonTitle>
+            <IonTitle onClick={clickToggle} size="large">Stopwatch</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <Stopwatch />
+        <Stopwatch numPadToggle={btnStatus.btnToggle} />
       </IonContent>
     </IonPage>
   );

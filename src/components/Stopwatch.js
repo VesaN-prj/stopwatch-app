@@ -59,11 +59,15 @@ class Stopwatch extends Component {
   };
 
   render() {
+
+    const btnStyle = {
+      opacity: this.props.numPadToggle
+    }
     
     const btnList = [1,2,3,4,5,6,7,8,9,0,"reset"];
 
     const timeBtns = btnList.map((snglBtn) =>
-      <IonButton className={"Numpad btn_"+ snglBtn.toString()} key={snglBtn.toString()} onClick={() => this.setPreSetTime(snglBtn)}>{snglBtn}</IonButton>
+      <IonButton className={"Numpad btn_"+ snglBtn.toString()} style={btnStyle} key={snglBtn.toString()} onClick={() => this.setPreSetTime(snglBtn)}>{snglBtn}</IonButton>
     );
 
     const { timerTime } = this.state;
@@ -71,6 +75,7 @@ class Stopwatch extends Component {
     let seconds = ("0" + (Math.floor(timerTime / 1000) % 60)).slice(-2);
     // let minutes = ("0" + (Math.floor(timerTime / 60000) % 60)).slice(-2);
     // let hours = ("0" + Math.floor(timerTime / 3600000)).slice(-2);
+
     return (
       <div className="Stopwatch">
           <div className="Stopwatch-display">

@@ -10,70 +10,82 @@ ion-icon {
 }
 
 .Stopwatch-display {
-    padding-top: 4em;
+    padding-top: 5em;
 }
 
 .Timer {
-    font-size: 2em;
+    font-size: 4em;
 }
 
 .Numpad {
-    --opacity: 1; /* IonButton visibility on Numpad */
+  height: 3.5em;
+  width: 5em;
 }
 
 /* .btn_1, .btn_2, .... , .btn_0, .btn_reset */
 .btn_1 {
     position: absolute;
     top: 1em;
-    left: 1em;
+    left: 0.5em;
   }
   .btn_2 {
     position: absolute;
     top: 1em;
-    left: 150px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
   .btn_3 {
     position: absolute;
     top: 1em;
-    left: 300px;
+    right: 0.5em;
   }
   .btn_4 {
     position: absolute;
     top: 6em;
-    left: 1em;
+    left: 0.5em;
   }
   .btn_5 {
     position: absolute;
     top: 6em;
-    left: 300px;
+    right: 0.5em;
   }
   .btn_6 {
     position: absolute;
-    top: 12em;
-    left: 1em;
+    top: 11em;
+    left: 0.5em;
   }
   .btn_7 {
     position: absolute;
-    top: 12em;
-    left: 300px;
+    top: 11em;
+    right: 0.5em;
   }
   .btn_8 {
     position: absolute;
-    top: 18em;
-    left: 1em;
+    top: 16em;
+    left: 0.5em;
   }
   .btn_9 {
     position: absolute;
-    top: 18em;
-    left: 150px;
+    top: 16em;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
   .btn_0 {
     position: absolute;
-    top: 18em;
-    left: 300px;
+    top: 16em;
+    right: 0.5em;
   }
   .btn_reset {
     position: absolute;
-    top: 12em;
-    left: 132px;
+    height: 2.5em;
+    width: auto;
+    top: 21em;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
   } 
